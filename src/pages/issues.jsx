@@ -41,7 +41,7 @@ const Issues = () => {
         // const audio = new Audio(blobUrl);
         // audio.play();
         console.log("rec stopped")
-        console.log("Blob size: ", newBlob.size);
+        console.log("Blob size::", newBlob.size);
         sendAudioToBackend(newBlob);
     };
 
