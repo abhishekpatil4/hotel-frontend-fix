@@ -186,9 +186,10 @@ const Issues = () => {
                         </div>
                         <ReactMediaRecorder
                             audio
-                            // mediaRecorderOptions={{
-                            //     mimeType: 'audio/wav'
-                            // }}
+                            mediaRecorderOptions={{
+                                // mimeType: 'audio/wav'
+                                audioBitsPerSecond: 128000
+                            }}
                             onStop={handleStop}
                             render={({ status, startRecording, stopRecording }) => (
                                 <div>
