@@ -35,7 +35,8 @@ const Issues = () => {
     };
 
     const handleStop = (blobUrl, blob) => {
-        const newBlob = new Blob([blob], { type: 'audio/wav' });
+        // const newBlob = new Blob([blob], { type: 'audio/wav' });
+        const newBlob = new File([blob], 'audio.wav', { type: 'audio/wav' });
         setAudioBlob(newBlob);
         // Optionally, you can play the recorded audio
         // const audio = new Audio(blobUrl);
