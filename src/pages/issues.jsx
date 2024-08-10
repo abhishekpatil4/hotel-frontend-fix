@@ -41,6 +41,7 @@ const Issues = () => {
         // const audio = new Audio(blobUrl);
         // audio.play();
         console.log("rec stopped")
+        console.log("Blob size: ", newBlob.size);
         sendAudioToBackend(newBlob);
     };
 
@@ -145,9 +146,11 @@ const Issues = () => {
         <Navbar />
         <Loader isLoading={loading} />
         <div className="flex mt-16">
-            <img src={kitchen} aria-hidden alt="vendor image" className="w-1/2 h-screen object-cover" />
-            <div className="min-h-screen w-1/2 flex items-center justify-center bg-white">
-                <div className="bg-white p-8 rounded-lg shadow-lg w-3/4 max-w-2xl">
+            {/* <img src={kitchen} aria-hidden alt="vendor image" className="w-1/2 h-screen object-cover" /> */}
+            {/* <div className="min-h-screen w-1/2 flex items-center justify-center bg-white"> */}
+            <div className="min-h-screen flex items-center justify-center bg-white">
+                {/* <div className="bg-white p-8 rounded-lg shadow-lg w-3/4 max-w-2xl"> */}
+                <div className="bg-white p-8 rounded-lg shadow-lg max-w-2xl">
                     <form className="max-w-lg mx-auto p-6 bg-white shadow-md rounded-lg" onSubmit={handleSubmit}>
                         <h2 className="text-2xl font-semibold mb-6 text-center">Lodge a Complaint</h2>
                         <div className="mb-4">
@@ -183,9 +186,9 @@ const Issues = () => {
                         </div>
                         <ReactMediaRecorder
                             audio
-                            mediaRecorderOptions={{
-                                mimeType: 'audio/wav'
-                            }}
+                            // mediaRecorderOptions={{
+                            //     mimeType: 'audio/wav'
+                            // }}
                             onStop={handleStop}
                             render={({ status, startRecording, stopRecording }) => (
                                 <div>
